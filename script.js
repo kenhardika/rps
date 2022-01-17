@@ -1,17 +1,21 @@
 const playerChoice = document.getElementById('playerChoice');
 const startGame = document.querySelector('.startGame')
 
-function computerPlay(rpsArray) { 
-        return computerRandom = rpsArray[Math.floor(Math.random()*rpsArray.length)].toLowerCase(); 
-    }
-computerPlay( rpsArray= [
-            "Rock",
-            "Paper",
-            "Scissors"
-        ]);
-console.log(computerRandom);
+startGame.addEventListener('click', game);
 
-startGame.addEventListener('click', result);
+function game(){
+
+    
+function computerPlay(rpsArray) { 
+    return computerRandom = rpsArray[Math.floor(Math.random()*rpsArray.length)].toLowerCase(); 
+}
+computerPlay( rpsArray= [
+        "Rock",
+        "Paper",
+        "Scissors"
+    ]);
+console.log(computerRandom);
+result();
 
 function result() {
     const playerSelection = playerChoice.value.toLowerCase();
@@ -58,3 +62,4 @@ function result() {
     }
     return result
     }
+}
