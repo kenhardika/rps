@@ -1,21 +1,23 @@
 const playerChoice = document.getElementById('playerChoice');
 const startGame = document.querySelector('.startGame')
+let countNum = document.querySelector('.gamesPlayed');
 
 startGame.addEventListener('click', game);
 
 function game(){
-
     
-function computerPlay(rpsArray) { 
-    return computerRandom = rpsArray[Math.floor(Math.random()*rpsArray.length)].toLowerCase(); 
-}
-computerPlay( rpsArray= [
+    function computerPlay(rpsArray) { 
+        return computerRandom = rpsArray[Math.floor(Math.random()*rpsArray.length)].toLowerCase(); 
+        }
+    computerPlay( rpsArray= [
         "Rock",
         "Paper",
         "Scissors"
     ]);
 console.log(computerRandom);
 result();
+document.getElementById('playerChoice').value = "";
+countNum.innerHTML++;
 
 function result() {
     const playerSelection = playerChoice.value.toLowerCase();
