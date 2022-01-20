@@ -1,67 +1,95 @@
-const playerChoice = document.getElementById('playerChoice');
-const startGame = document.querySelector('.startGame')
-let countNum = document.querySelector('.gamesPlayed');
-
-startGame.addEventListener('click', game);
-
-function game(){
+    const btn = document.querySelector('.btn');
+    btn.addEventListener("click", showScore);
     
+    function showScore(te){
+    let playerScore = document.getElementById("playerScore");
+    if (playerScore.style.display === "none") {
+        playerScore.style.display = "inline";
+        playerResult.style.display = "inline";
+        computerScore.style.display = "inline";
+        computerResult.style.display = "inline";
+    } else {}
+    te.preventDefault();
+    checkResult();
+    }
+
+    function computerChoice() {
+    computerPlay( rpsArray= [
+         "Rock",
+         "Paper",
+         "Scissors"
+        ]);
+    }
+    
+    //the computer randomize its options
     function computerPlay(rpsArray) { 
         return computerRandom = rpsArray[Math.floor(Math.random()*rpsArray.length)].toLowerCase(); 
         }
-    computerPlay( rpsArray= [
-        "Rock",
-        "Paper",
-        "Scissors"
-    ]);
-console.log(computerRandom);
-result();
-document.getElementById('playerChoice').value = "";
-countNum.innerHTML++;
 
-function result() {
-    const playerSelection = playerChoice.value.toLowerCase();
+    //if the player choose the rock, then rock program will running etc etc
+    function playRock () {
+        computerChoice();
+        if (computerRandom === "rock") {
+            alert("It's a draw!");
+        }
+        else if (computerRandom === "paper") {
+            alert("You lose!");
+            computerResult.innerHTML++;
+        }
+        else {
+            alert("YOU WIN!");
+            playerResult.innerHTML++;
+        }
+        
+    }
+    function playPaper () {
+    computerChoice();
 
-    if (playerSelection === "rock" && computerRandom === "rock") {
-    console.log("Both choose Rock, so Draw")
-    alert("Draw! both choose Rock");
+        if (computerRandom === "rock") {
+            alert("YOU WIN!");
+            playerResult.innerHTML++;
+        }
+        else if (computerRandom === "paper") {
+            alert("It's a draw!");
+        }
+        else {
+            alert("You lose!");
+            computerResult.innerHTML++;
+        }  
     }
-    else if (playerSelection === "rock" && computerRandom === "paper") {
-    console.log("ah rock lose against paper") 
-    alert("Lose! rock lose against paper")
+    function playScissors () {
+    computerChoice();
+
+        if (computerRandom === "rock") {
+            alert("You lose!");
+            computerResult.innerHTML++;
+        }
+        else if (computerRandom === "paper") {
+            alert("YOU WIN!");
+            playerResult.innerHTML++;
+        }
+        else {
+            alert("It's a draw!");
+        }  
     }
-    else if (playerSelection === "rock" && computerRandom === "scissors") {
-    console.log("ROCK WIN AGAINST SCISSORS")
-    alert("WIN! rock win against scissors")
+    //the result will show who won and counts it
+    function checkResult() {
+    if (parseInt(playerResult.innerHTML) === 5 ) {
+    console.log("PLAYER WIN THE GAME");
+    
+    computerResult.innerHTML = "0";
+    playerResult.innerHTML = "0";
+
     }
-    else if (playerSelection === "paper" && computerRandom === "rock") {
-    console.log("PAPER WIN AGAINST ROCK")
-    alert("WIN! paper win against rock")
-    } 
-    else if (playerSelection === "paper" && computerRandom === "paper") {
-    console.log("Both choose Paper, so Draw")
-    alert("Draw! both choose paper")
+    else if (parseInt(computerResult.innerHTML) === 5 ) {
+    console.log("COMPUTER WIN THE GAME");
+    
+    computerResult.innerHTML = "0";
+    playerResult.innerHTML = "0";
+        
     }
-    else if (playerSelection === "paper" && computerRandom === "scissors") {
-    console.log("ah paper lose against scissors")
-    alert("Lose! paper lose against scissors")
+    else {
     }
-    else if (playerSelection === "scissors" && computerRandom === "rock") {
-    console.log("ah scissors lose against rock")
-    alert("Lose, scissors lose against rock")
+
     }
-    else if (playerSelection === "scissors" && computerRandom === "paper") {
-    console.log("SCISSORS WIN AGAINST PAPER")
-    alert("WIN! scissors win against paper")
-    }
-    else if (playerSelection === "scissors" && computerRandom === "scissors") {
-    console.log("Both choose scissors, so Draw")
-    alert("Draw! both choose scissors")
-    }
-    else
-    {
-    console.log( "what is this word? " + playerSelection + " it is invalid")
-    }
-    return result
-    }
-}
+    //who finish with 5 wins, win the game 

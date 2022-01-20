@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK PAPER SCISSORS</title>
+</head>
+<body>
+    
+    <h1>Welcome to Rock Paper Scissors!</h1>
+    <div class="notice"> First to win by 5, win the game </div>
+    <div class="header"> Choose your options: </div>
+    <div class="playerOptions">
+        <form action="" class="btn">
+            <button onclick= 'playRock()' > <img src="./img/rock.png" id= "playerRock" width="50px"> </button>
+            <button onclick= 'playPaper()' > <img src="./img/paper.png" id= "playerPaper" width="50px"> </button>
+            <button onclick= 'playScissors()'  > <img src="./img/scissors.jpg" id="playerScissors" width="50px"> </button> 
+        </form>
+    </div>
+    <span id="playerScore" style='display: none'> Player Wins: </span> 
+    <span id="playerResult" style='display: none'> 0 </span>
+    <br>
+    <span id="computerScore" style='display: none'> Computer Wins: </span>
+    <span id="computerResult" style='display: none'> 0 </span>
+<script>
+ //   let playerScore = document.querySelector('.playerScore');
+    const btn = document.querySelector('.btn');
+    btn.addEventListener("click", showScore);
+    
+    function showScore(te){
+    let playerScore = document.getElementById("playerScore");
+    if (playerScore.style.display === "none") {
+        playerScore.style.display = "inline";
+        playerResult.style.display = "inline";
+        computerScore.style.display = "inline";
+        computerResult.style.display = "inline";
+    } else {}
+    te.preventDefault();
+    }
+    
+    
+    
+
+    //I need user to choose between Rock Paper Scissors
+    function computerChoice() {
+    computerPlay( rpsArray= [
+         "Rock",
+         "Paper",
+         "Scissors"
+        ]);
+    }
+    
+    //the computer randomize its options
+    function computerPlay(rpsArray) { 
+        return computerRandom = rpsArray[Math.floor(Math.random()*rpsArray.length)].toLowerCase(); 
+        }
+
+    //if the player choose the rock, then rock program will running etc etc
+    function playRock () {
+        computerChoice();
+        if (computerRandom === "rock") {
+            alert("It's a draw!");
+        }
+        else if (computerRandom === "paper") {
+            alert("You lose!");
+            computerResult.innerHTML++;
+        }
+        else {
+            alert("YOU WIN!");
+            playerResult.innerHTML++;
+        }
+        
+    }
+    function playPaper () {
+    computerChoice();
+
+        if (computerRandom === "rock") {
+            alert("YOU WIN!");
+            playerResult.innerHTML++;
+        }
+        else if (computerRandom === "paper") {
+            alert("It's a draw!");
+        }
+        else {
+            alert("You lose!");
+            computerResult.innerHTML++;
+        }  
+    }
+    function playScissors () {
+    computerChoice();
+
+        if (computerRandom === "rock") {
+            alert("You lose!");
+            computerResult.innerHTML++;
+        }
+        else if (computerRandom === "paper") {
+            alert("YOU WIN!");
+            playerResult.innerHTML++;
+        }
+        else {
+            alert("It's a draw!");
+        }  
+    }
+    //the result will show who won and counts it
+
+    //who finish with 5 wins, win the game 
+
+</script>
+
+</body>
+</html>

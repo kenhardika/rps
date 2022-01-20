@@ -4,27 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors!</title>
     <link rel="stylesheet" href="./style.css">
+    <title>ROCK PAPER SCISSORS</title>
 </head>
 <body>
     
-    <div class="header">
-        <h1> Welcome to Rock Paper Scissors The Game! </h1>
+    <h1>Welcome to Rock Paper Scissors!</h1>
+    <div class="notice"> First to win by 5, win the game </div>
+    <div class="header"> Choose your options: </div>
+    <div class="playerOptions">
+        <form action="" class="btn">
+            <button onclick= 'playRock()' > <img src="./img/rock.jpeg" id= "playerRock" width="50px"> </button>
+            <button onclick= 'playPaper()' > <img src="./img/paper.jpeg" id= "playerPaper" width="50px"> </button>
+            <button onclick= 'playScissors()'  > <img src="./img/scissors.jpeg" id="playerScissors" width="50px"> </button> 
+        </form>
     </div>
-    <div class="content">
-        <label for="playerChoice">Type your choice here:</label>   
-        <form action="">
-            <input type="text" id="playerChoice" name="playerChoice">
-        </form> 
-        <button class="startGame"> Start Game </button> <br>
-        
-        <span class="text"> Games Played: </span>
-        <span class="gamesPlayed"> 0 </span>
-    </div>
-
-    <script src="./script.js"></script>
-
-
+    <span id="playerScore" style='display: none'> Player Wins: </span> 
+    <span id="playerResult" style='display: none'> 0 </span>
+    <br>
+    <span id="computerScore" style='display: none'> Computer Wins: </span>
+    <span id="computerResult" style='display: none'> 0 </span>
+<script src="./script.js"> </script>
 </body>
 </html>
