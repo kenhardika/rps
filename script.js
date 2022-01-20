@@ -75,14 +75,16 @@
     //the result will show who won and counts it
     function checkResult() {
     if (parseInt(playerResult.innerHTML) === 5 ) {
-    console.log("PLAYER WIN THE GAME");
+    console.log("PLAYER WIN THE GAME, system restarted");
+    alert("YOU WIN THE GAME! CONGRATULATION");
     
     computerResult.innerHTML = "0";
     playerResult.innerHTML = "0";
 
     }
     else if (parseInt(computerResult.innerHTML) === 5 ) {
-    console.log("COMPUTER WIN THE GAME");
+    console.log("COMPUTER WIN THE GAME, system restarted");
+    alert("Computer win the game, better luck next time");
     
     computerResult.innerHTML = "0";
     playerResult.innerHTML = "0";
