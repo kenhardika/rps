@@ -30,14 +30,14 @@
     function playRock () {
         computerChoice();
         if (computerRandom === "rock") {
-            alert("It's a draw!");
+            alert("It's a draw! both choose rock");
         }
         else if (computerRandom === "paper") {
-            alert("You lose!");
+            alert("You lose! rock lose to paper ");
             computerResult.innerHTML++;
         }
         else {
-            alert("YOU WIN!");
+            alert("YOU WIN! rock win against scissors");
             playerResult.innerHTML++;
         }
         
@@ -46,14 +46,14 @@
     computerChoice();
 
         if (computerRandom === "rock") {
-            alert("YOU WIN!");
+            alert("YOU WIN! paper beats rock");
             playerResult.innerHTML++;
         }
         else if (computerRandom === "paper") {
-            alert("It's a draw!");
+            alert("It's a draw! both choose paper");
         }
         else {
-            alert("You lose!");
+            alert("You lose! paper lose to scissors");
             computerResult.innerHTML++;
         }  
     }
@@ -61,15 +61,15 @@
     computerChoice();
 
         if (computerRandom === "rock") {
-            alert("You lose!");
+            alert("You lose! scissors lose to rock");
             computerResult.innerHTML++;
         }
         else if (computerRandom === "paper") {
-            alert("YOU WIN!");
+            alert("YOU WIN! scissors win against paper ");
             playerResult.innerHTML++;
         }
         else {
-            alert("It's a draw!");
+            alert("It's a draw! you both choose scissors");
         }  
     }
     //the result will show who won and counts it
