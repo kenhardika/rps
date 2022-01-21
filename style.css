@@ -1,12 +1,50 @@
-#playerScore {
+body{
+    margin: 0;
+}
+#playerScore, #playerResult, #computerScore, #computerResult {
     display: none;
 }
-#playerResult {
-    display: none;
+
+.header {
+    display: grid;
+    grid-auto-rows: 200px 100px;
+    border: solid 2px black;
+    align-items: stretch;
+    justify-items: stretch;
 }
-#computerScore {
-    display: none;
+h1 {
+    margin: 0;
+    border: solid 2px red;
+    text-align: center;
+    align-self: center;
 }
-#computerResult {
-    display: none;
+
+.notice {
+    border: solid 2px green;
+    text-align: center;
+}
+
+
+.content {
+    display: grid;
+    grid-auto-rows: 100px 100px;
+    align-items: stretch;
+    justify-items: stretch;
+    border: solid 2px blueviolet;
+}
+
+.labelOptions {
+    text-align: center;
+    border: solid 2px orange;
+    align-self: center;
+}
+
+.playerOptions {
+    text-align: center;
+    border: solid 2px cyan;
+}
+
+.scoreAll {
+    text-align: center;
+    border: solid 2px darkkhaki;
 }

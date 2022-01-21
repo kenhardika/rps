@@ -8,22 +8,31 @@
     <title>ROCK PAPER SCISSORS</title>
 </head>
 <body>
-    
-    <h1>Welcome to Rock Paper Scissors!</h1>
-    <div class="notice"> First to win by 5, win the game </div>
-    <div class="header"> Choose your options: </div>
-    <div class="playerOptions">
-        <form action="" class="btn">
-            <button onclick= 'playRock()' > <img src="./img/rock.jpeg" id= "playerRock" width="50px"> </button>
-            <button onclick= 'playPaper()' > <img src="./img/paper.jpeg" id= "playerPaper" width="50px"> </button>
-            <button onclick= 'playScissors()'  > <img src="./img/scissors.jpeg" id="playerScissors" width="50px"> </button> 
-        </form>
+
+    <div class="header">
+        <h1>Welcome to Rock Paper Scissors!</h1>
+        <div class="notice"> First to win by 5, win the game </div>
     </div>
-    <span id="playerScore" style='display: none'> Player Wins: </span> 
-    <span id="playerResult" > 0 </span>
-    <br>
-    <span id="computerScore" > Computer Wins: </span>
-    <span id="computerResult" > 0 </span>
+    <div class="content">
+        <div class="labelOptions"> Choose your options: </div>
+        <div class="playerOptions">
+            <form action="" class="btn">
+                <button onclick= 'playRock()' > <img src="./img/rock.jpeg" id= "playerRock" width="50px"> </button>
+                <button onclick= 'playPaper()' > <img src="./img/paper.jpeg" id= "playerPaper" width="50px"> </button>
+                <button onclick= 'playScissors()'  > <img src="./img/scissors.jpeg" id="playerScissors" width="50px"> </button> 
+            </form>
+        </div>
+        <div class="scoreAll">
+             <span id="playerScore"> Player Wins: </span> 
+             <span id="playerResult" > 0 </span>
+             <br>
+             <span id="computerScore" > Computer Wins: </span>
+             <span id="computerResult" > 0 </span>
+        </div>
+    </div>
+    <div class="footer"></div>
+
+
 <script src="./script.js"> </script>
 </body>
 </html>
